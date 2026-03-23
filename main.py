@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 
 subjects = []
 
-# ✅ Check if data exists
+#  Check if data exists
 if os.path.exists("data.json"):
-    print("\n📂 Existing plan found!")
+    print("\n Existing plan found!")
 
     print("1. Continue existing plan")
     print("2. Create new plan")
@@ -26,7 +26,7 @@ if os.path.exists("data.json"):
         exit()
 
 else:
-    print("\n🆕 No existing plan found. Create a new one.")
+    print("\n  No existing plan found. Create a new one.")
 if not subjects:
     n = int(input("Enter number of subjects: "))
 
@@ -56,7 +56,7 @@ daily_hours = float(input("Enter daily study hours: "))
 multi_plan = generate_multi_day_plan(subjects, daily_hours)
 
 # Step 5: Display plan
-print("\n📅 Your Smart Study Plan:\n")
+print("\n  Your Smart Study Plan:\n")
 
 for day in multi_plan:
     print(f"\nDay {day['day']}:")
@@ -73,7 +73,7 @@ plt.xlabel("Subjects")
 plt.ylabel("Hours")
 plt.title("Day 1 Study Plan")
 plt.show()
-# 📌 Update progress
+#  Update progress
 subjects = update_progress(subjects)
 
 with open("data.json", "w") as f:
